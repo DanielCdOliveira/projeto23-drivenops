@@ -1,0 +1,43 @@
+services:
+  postgres_sorteador_db:
+    image: postgres
+    container_name: postgres_sorteador_db
+    restart: always
+    ports:
+      - 3456:5432
+    env_file:
+      - back-end/.env
+    volumes:
+      - postgres_sorteador_db:/var/lib/postgresql/data
+
+  node-sorteador:
+    container_name: node-sorteador
+    build: ./back-end
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres_sorteador_db
+    env_file:
+      - back-end/.env
+
+  react-sorteador:
+    container_name: react-sorteador
+    build: ./front-end
+    volumes:
+      - build-react:/var/www/html
+
+  nginx-sorteador:
+    container_name: nginx-sorteador
+    build: ./nginx
+    ports:
+      - 8080:80
+    volumes:
+      - build-react:/var/www/html
+    depends_on:
+      - postgres_sorteador_db
+      - node-sorteador
+      - react-sorteador
+
+volumes:
+  postgres_sorteador_db:
+  build-react:
