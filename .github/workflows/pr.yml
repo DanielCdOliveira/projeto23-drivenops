@@ -13,9 +13,10 @@ jobs:
         envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "postgres"
           envkey_POSTGRES_HOST: "postgres_sorteador_db"
-          envkey_POSTGRES_PORT: 5432
+          envkey_POSTGRES_PORT: "5432"
           envkey_POSTGRES_DATABASE: "students-test"
           envkey_DATABASE_URL: "postgresql://postgres:postgres@postgres_sorteador_db:5432/students-test"
+          directory: back-end/
           file_name: .env.test
       - name: Run tests
         run: docker-compose -f docker-compose-test.yaml run node_app npm run test
