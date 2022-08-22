@@ -30,7 +30,7 @@ services:
     container_name: nginx-sorteador
     build: ./nginx
     ports:
-      - 8080:80
+      - 80:80
     volumes:
       - build-react:/var/www/html
     depends_on:
