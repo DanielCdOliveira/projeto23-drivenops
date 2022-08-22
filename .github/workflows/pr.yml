@@ -10,7 +10,7 @@ jobs:
         uses: SpicyPizza/create-envfile@v1
 
         with:
-        envkey_POSTGRES_USER: "postgres"
+          envkey_POSTGRES_USER: "postgres"
           envkey_POSTGRES_PASSWORD: "postgres"
           envkey_POSTGRES_HOST: "postgres_sorteador_db"
           envkey_POSTGRES_PORT: 5432
