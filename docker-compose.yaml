@@ -14,7 +14,7 @@ services:
     container_name: node-sorteador
     build: ./back-end
     ports:
-      - 80:5000
+      - 5000:5000
     depends_on:
       - postgres_sorteador_db
     env_file:
