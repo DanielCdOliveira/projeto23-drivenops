@@ -19,7 +19,7 @@ jobs:
           envkey_POSTGRES_PASSWORD: ${{secrets.POSTGRES_PASSWORD}}
           envkey_POSTGRES_HOST: ${{secrets.POSTGRES_HOST}}
           envkey_POSTGRES_PORT: ${{secrets.POSTGRES_PORT}}
-          envkey_POSTGRES_DATABASE: ${{secrets.POSTGRES_DATABASE_TEST}}
+          envkey_POSTGRES_DATABASE: ${{secrets.POSTGRES_DATABASE}}
           envkey_DATABASE_URL: ${{secrets.DATABASE_URL}}
           directory: back-end/
           file_name: .env
